@@ -3,7 +3,7 @@ $url            = 'https://master.dockerproject.com/windows/386/docker-1.5.0-dev
 $url64          = 'https://master.dockerproject.com/windows/amd64/docker-1.5.0-dev.exe'
 $validExitCodes = @(0)
 
-$binRoot = Get-BinRoot
+$binRoot = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $installDir = Join-Path "$binRoot" "$packageName"
 $installBin = "${packageName}.exe"
 $installPath = Join-Path "$installDir" "$installBin"
