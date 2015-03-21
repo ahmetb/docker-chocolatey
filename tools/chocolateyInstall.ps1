@@ -11,4 +11,4 @@ $installPath = Join-Path "$installDir" "$installBin"
 
 mkdir "$installDir"
 Get-ChocolateyWebFile "$packageName" "$installPath" "$url" "$url64"
-Write-ChocolateySuccess "$packageName"
+
