@@ -1,6 +1,10 @@
 ﻿$packageName    = 'docker'
-$url            = 'https://master.dockerproject.com/windows/386/docker-1.5.0-dev.exe'
-$url64          = 'https://master.dockerproject.com/windows/amd64/docker-1.5.0-dev.exe'
+$url            = 'http://test.docker.com.s3.amazonaws.com/builds/Windows/i386/docker-1.6.0-rc1.exe'
+$checksum       = 'cbe2b574dd8d96825185c22fcfb280db'
+$checksumType   = 'md5'
+$url64          = 'http://test.docker.com.s3.amazonaws.com/builds/Windows/x86_64/docker-1.6.0-rc1.exe'
+$checksum64     = '00F022AD868639BB0E5FE58F360C9522'
+$checksumType64 = 'md5'
 $validExitCodes = @(0)
 
 $toolsDir    = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
@@ -10,5 +14,4 @@ $installBin  = "${packageName}.exe"
 $installPath = Join-Path "$installDir" "$installBin"
 
 mkdir "$installDir"
-Get-ChocolateyWebFile "$packageName" "$installPath" "$url" "$url64"
-
+Get-ChocolateyWebFile "$packageName" "$installPath" "$url" "$url64" -checksum "$checksum" -checksumType "$checksumType" -checksum64 "$checksum64" -checksumType64 "$checksumType64"
