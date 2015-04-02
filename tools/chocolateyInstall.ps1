@@ -1,9 +1,9 @@
 ﻿$packageName    = 'docker'
-$url            = 'http://test.docker.com.s3.amazonaws.com/builds/Windows/i386/docker-1.6.0-rc3.exe'
-$checksum       = '70842aaed562df66ca17654e46db2051'
+$url            = 'http://test.docker.com.s3.amazonaws.com/builds/Windows/i386/docker-1.6.0-rc4.exe'
+$checksum       = '5a53bf4066c916219747dbf93b6ee46f'
 $checksumType   = 'md5'
-$url64          = 'http://test.docker.com.s3.amazonaws.com/builds/Windows/x86_64/docker-1.6.0-rc3.exe'
-$checksum64     = '7f029e2ea4eb4bc23b90e0ea0dc49836'
+$url64          = 'http://test.docker.com.s3.amazonaws.com/builds/Windows/x86_64/docker-1.6.0-rc4.exe'
+$checksum64     = 'ef55e04c2cba15beae08d16629b148a8'
 $checksumType64 = 'md5'
 $validExitCodes = @(0)
 
