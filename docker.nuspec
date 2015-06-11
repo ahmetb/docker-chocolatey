@@ -5,23 +5,20 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>docker</id>
     <title>Docker</title>
-    <version>1.6.0-rc6</version>
+    <version>1.6.0</version>
     <authors>Docker Contributors</authors>
     <owners>ahmetalpbalkan</owners>
     <summary>Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications.</summary>
     <description>Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications. This package contains the docker client for Windows and not the Docker engine to run containers on Windows hosts.
 
-Docker client for Windows is not a Docker container engine for Windows. You can use this to manage your Linux machines running as Docker hosts at the moment until the containers support comes out in the next version of Windows Server.</description>
+NOTE: Docker client for Windows is not a Docker container engine for Windows. You can use this to manage your Linux machines running as Docker hosts at the moment until the containers support comes out in the next version of Windows Server.</description>
     <projectUrl>https://www.docker.com</projectUrl>
     <tags>docker devops containers</tags>
     <copyright></copyright>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/ahmetalpbalkan/docker-chocolatey/d9d3bd5a750d03fc8933e1bee4c3755f361e2797/docker.png</iconUrl>
-    <!--<dependencies>
-      <dependency id="" version="" />
-    </dependencies>-->
-    <releaseNotes>Initially packaging Docker for Windows nightly release.</releaseNotes>
+    <releaseNotes>Updated to the latest Docker version.</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
