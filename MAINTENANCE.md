@@ -70,6 +70,9 @@ used below is where the `docker*.nupkg` exists):
 The command above must be installing docker correctly. Run `docker -v`
 to verify if it is installed.
 
+Repeat the `choco install` command with an additional `-x86` flag to
+make sure 32-bit version installs correctly, too.
+
 Run the following commands to verify uninstallation works:
 
     choco uninstall docker
