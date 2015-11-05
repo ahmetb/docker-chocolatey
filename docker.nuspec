@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>docker</id>
     <title>Docker</title>
-    <version>1.8.1</version>
+    <version>1.9.0</version>
     <authors>Docker Contributors</authors>
     <owners>ahmetalpbalkan</owners>
     <summary>Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications.</summary>
@@ -18,6 +18,7 @@ NOTE: Docker client for Windows is not a Docker container engine for Windows. Yo
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/ahmetalpbalkan/docker-chocolatey/d9d3bd5a750d03fc8933e1bee4c3755f361e2797/docker.png</iconUrl>
+    <packageSourceUrl>https://github.com/ahmetalpbalkan/docker-chocolatey</packageSourceUrl>
     <releaseNotes>Updated to the latest Docker version.</releaseNotes>
   </metadata>
   <files>
