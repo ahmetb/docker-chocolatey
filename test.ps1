@@ -1,11 +1,30 @@
-"Running tests"
+param(
+  [string]$cpu
+)
+
+if (!$cpu) {
+  $cpu = "x64"
+}
+if ($cpu -eq "x86") {
+  $options = "-forcex86"
+}
+
+"Running tests for $cpu"
 $ErrorActionPreference = "Stop"
-$version = $env:APPVEYOR_BUILD_VERSION -replace('\.[^.\\/]+$')
+
+if ($env:APPVEYOR_BUILD_VERSION) {
+  # run in CI
+  $version = $env:APPVEYOR_BUILD_VERSION -replace('\.[^.\\/]+$')
+} else {
+  # run manually
+  [xml]$spec = Get-Content docker.nuspec
+  $version = $spec.package.metadata.version
+}
 
 "TEST: Version $version in docker.nuspec file should match"
 [xml]$spec = Get-Content docker.nuspec
 if ($spec.package.metadata.version.CompareTo($version)) {
-  Write-Error "FAIL: rong version in nuspec file!"
+  Write-Error "FAIL: Wrong version in nuspec file!"
 }
 
 "TEST: Package should contain only install script"
@@ -17,7 +36,7 @@ if ($zip.Entries.Count -ne 5) {
 $zip.Dispose()
 
 "TEST: Installation of package should work"
-. choco install -y docker -source .
+. choco install -y docker $options -source .
 
 "TEST: Version of binary should match"
 . docker --version
