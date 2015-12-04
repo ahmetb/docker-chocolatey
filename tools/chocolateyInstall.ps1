@@ -1,8 +1,8 @@
 $packageName    = 'docker'
-$url            = 'https://get.docker.com/builds/Windows/i386/docker-1.9.0.exe'
-$checksum       = '5c1990a4ce59c42ef493db0013aaccf8'
-$url64          = 'https://get.docker.com/builds/Windows/x86_64/docker-1.9.0.exe'
-$checksum64     = 'b08166276646433dc04b23982a9071aa'
+$url            = 'https://get.docker.com/builds/Windows/i386/docker-1.9.1.exe'
+$checksum       = '4f88ae8680ac72d4144d667de5b4cdae'
+$url64          = 'https://get.docker.com/builds/Windows/x86_64/docker-1.9.1.exe'
+$checksum64     = '08b5fa55b2a2a559315c6747fb2fcab0'
 $checksumType   = 'md5'
 $checksumType64 = 'md5'
 $validExitCodes = @(0)
