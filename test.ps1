@@ -30,7 +30,7 @@ if ($spec.package.metadata.version.CompareTo($version)) {
 "TEST: Package should contain only install script"
 Add-Type -assembly "system.io.compression.filesystem"
 $zip = [IO.Compression.ZipFile]::OpenRead("$pwd\docker.$version.nupkg")
-if ($zip.Entries.Count -ne 5) {
+if ($zip.Entries.Count -ne 7) {
   Write-Error "FAIL: Wrong count in nupkg!"
 }
 $zip.Dispose()
@@ -42,6 +42,16 @@ $zip.Dispose()
 . docker --version
 if (-Not $(docker --version).Contains("version $version,")) {
   Write-Error "FAIL: Wrong version of docker installed!"
+}
+
+"TEST: Docker daemon shim must not exist"
+if (Test-Path $env:ChocolateyInstall\bin\dockerd.exe) {
+  Write-Error "FAIL: Docker daemon shim exists!"
+}
+
+"TEST: Docker proxy shim must not exist"
+if (Test-Path $env:ChocolateyInstall\bin\docker-proxy.exe) {
+  Write-Error "FAIL: Docker proxy shim exists!"
 }
 
 "TEST: Uninstall show remove the binary"
