@@ -9,6 +9,8 @@ This Chocolatey package is designed to download the docker
 client binary (.exe) from `get.docker.com` and place it
 in `%PATH%`.
 
+The pre-release packages download the docker client binary from `test.docker.com`.
+
 Main installation script is written in PowerShell and is in
 `tools\chocolateyInstall.ps1`.
 
@@ -18,9 +20,17 @@ Main installation script is written in PowerShell and is in
 
 ## Making a new release
 
+The following steps describe the process to make a new release. If you want
+to make a new pre-release eg. for a release candidate 1.12.0-rc5, see the steps below.
+
 #### 1. Update all files
 
-Run `./update.sh 1.10.3` and specifiy the new version of the Docker client. (The script works on Mac only at the moment).
+First make sure you are in the `master` branch.
+
+    git checkout master
+    git pull
+
+Run `./update.sh 1.10.3` and specify the new version of the Docker client. (The script works on Mac only at the moment).
 This will update these files
   * docker.nuspec
   * appveyor.yml
@@ -49,18 +59,60 @@ Enter eg. 1.10.3 in the field "Tag version" and "Release title" and add some nic
 
 AppVeyor then builds the package again, tests it and then pushes it to Chocolatey for approval.
 
+## Making a new pre-release
+
+The following steps describe the process to make a new pre-release package
+for one of the release candidates of the Docker client.
+
+#### 1. Update all files
+
+First make sure you are in the `prerelease` branch.
+
+    git checkout prerelease
+    git pull
+
+Run `./update.sh 1.12.0-rc5` and specify the new version of the Docker client. (The script works on Mac only at the moment).
+This will update these files
+  * docker.nuspec
+  * appveyor.yml
+  * tools/chocolateyInstall.ps1
+
+#### 2. Create a branch
+
+Create a branch and push it.
+
+    git checkout -b update-docker-1.12.0-rc5
+    git add docker.nuspec appveyor.yml tools/chocolateyInstall.ps1
+    git push -u origin update-docker-1.12.0-rc5
+
+#### 3. Create a pull request
+
+With the new branch create a pull request **targeting the `prerelease` branch**.
+Now check AppVeyor build status.
+
+#### 4. Merge pull request
+
+At GitHub merge the pull request into the `prerelease` branch if all the tests
+from AppVeyor are green.
+
+#### 5. Draft a pre-release
+
+Now draft a new pre-release at https://github.com/ahmetalpbalkan/docker-chocolatey/releases/new
+Enter eg. 1.12.0-rc5 in the field "Tag version" and "Release title" and add some nice description.
+Remember to check the **This is a pre-release** checkbox.
+
+AppVeyor then builds the package again, tests it and then pushes it to Chocolatey for approval.
+
+## Approval Process
+
 #### 6. Approval Process
 
 If you are submitting a stable version, Chocolatey moderators need to
-allow the package before it is published. This usually takes a day or
+allow the package before it is published. This usually takes an hour or
 so. (If it takes any longer, ping @ferventcoder).
 
 If a package is **pre-release** (i.e. has `-rc1`, `-beta` like strings
-in its version) then the submission **does not need moderator approval**
-and you will see a message like this:
-
-> "*This package is exempt from moderation. While it is likely safe for you,
-> there is more risk involved.*"
+in its version) then the submission also goes through automatic approval.
 
 The difference is, users install stable packages with:
 
@@ -68,7 +120,7 @@ The difference is, users install stable packages with:
 
 and pre-release packages with:
 
-    choco install -pre
+    choco install docker -pre
 
 command and Chocolatey usually prompts users with more confirmation
 messages if the package is pre-release.
