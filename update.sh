@@ -7,8 +7,8 @@ if [ "$1" = "" ]; then
   exit 1
 fi
 
-if [[ "${OSTYPE}" != "darwin"* ]]; then
-  echo "This version does only support Mac."
+if [[ "${OSTYPE}" != "darwin"* && "${OSTYPE}" != "linux-gnu"* ]]; then
+  echo "This version support Mac and Windows Subsystem for Linux"
   exit 2
 fi
 
