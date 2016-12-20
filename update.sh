@@ -1,21 +1,28 @@
 #!/bin/bash
 
 if [ "$1" = "" ]; then
-  echo "Usage: $0 rcversion"
-  echo "Update the choco package to a given rcversion"
-  echo "Example: $0 1.12.0-rc4"
+  echo "Usage: $0 version"
+  echo "Update the choco package to a given version"
+  echo "Example: $0 1.10.3"
   exit 1
 fi
 
-if [[ "${OSTYPE}" != "darwin"* ]]; then
-  echo "This version does only support Mac."
+if [[ "${OSTYPE}" != "darwin"* && "${OSTYPE}" != "linux-gnu"* ]]; then
+  echo "This version support Mac and Windows Subsystem for Linux"
   exit 2
 fi
 
 version=$1
 
-url="https://test.docker.com/builds/Windows/i386/docker-${version}.zip"
-url64="https://test.docker.com/builds/Windows/x86_64/docker-${version}.zip"
+uri="get"
+
+if [[ $version = *"-rc"* ]]
+then
+  uri="test"
+fi
+
+url="https://${uri}.docker.com/builds/Windows/i386/docker-${version}.zip"
+url64="https://${uri}.docker.com/builds/Windows/x86_64/docker-${version}.zip"
 checksum=$(curl "${url}.md5" | cut -f 1 -d " ")
 checksum64=$(curl "${url64}.md5" | cut -f 1 -d " ")
 
