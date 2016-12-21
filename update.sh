@@ -14,8 +14,15 @@ fi
 
 version=$1
 
-url="https://get.docker.com/builds/Windows/i386/docker-${version}.zip"
-url64="https://get.docker.com/builds/Windows/x86_64/docker-${version}.zip"
+uri="get"
+
+if [[ $version = *"-rc"* ]]
+then
+  uri="test"
+fi
+
+url="https://${uri}.docker.com/builds/Windows/i386/docker-${version}.zip"
+url64="https://${uri}.docker.com/builds/Windows/x86_64/docker-${version}.zip"
 checksum=$(curl "${url}.md5" | cut -f 1 -d " ")
 checksum64=$(curl "${url64}.md5" | cut -f 1 -d " ")
 
