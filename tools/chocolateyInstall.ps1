@@ -1,8 +1,8 @@
 $packageName    = 'docker'
-$url            = 'https://test.docker.com/builds/Windows/i386/docker-1.13.0-rc7.zip'
-$checksum       = '01a2007b9d5fac29f498a79124a9a3b0'
-$url64          = 'https://test.docker.com/builds/Windows/x86_64/docker-1.13.0-rc7.zip'
-$checksum64     = 'e67693a2e073a188a1644d9c8d14f72b'
+$url            = 'https://test.docker.com/builds/Windows/i386/docker-1.13.1-rc1.zip'
+$checksum       = '9f6d66571b65a84997d2c85d0868db79'
+$url64          = 'https://test.docker.com/builds/Windows/x86_64/docker-1.13.1-rc1.zip'
+$checksum64     = '2fa1b40b5ba49d71e373d4cf6d3c5d73'
 $checksumType   = 'md5'
 $checksumType64 = 'md5'
 $validExitCodes = @(0)
