@@ -23,8 +23,8 @@ fi
 
 url="https://${uri}.docker.com/builds/Windows/i386/docker-${version}.zip"
 url64="https://${uri}.docker.com/builds/Windows/x86_64/docker-${version}.zip"
-checksum=$(curl "${url}.md5" | cut -f 1 -d " ")
-checksum64=$(curl "${url64}.md5" | cut -f 1 -d " ")
+checksum=$(curl "${url}.sha256" | cut -f 1 -d " ")
+checksum64=$(curl "${url64}.sha256" | cut -f 1 -d " ")
 
 sed -i.bak "s/<version>.*<\/version>/<version>${version}<\/version>/" docker.nuspec
 
