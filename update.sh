@@ -3,7 +3,7 @@
 if [ "$1" = "" ]; then
   echo "Usage: $0 version"
   echo "Update the choco package to a given version"
-  echo "Example: $0 1.10.3"
+  echo "Example: $0 17.03.0-ce"
   exit 1
 fi
 
@@ -21,8 +21,11 @@ then
   uri="test"
 fi
 
-url="https://${uri}.docker.com/builds/Windows/i386/docker-${version}.zip"
-url64="https://${uri}.docker.com/builds/Windows/x86_64/docker-${version}.zip"
+# cut off "-ce"
+version=${version//-ce/}
+
+url="https://${uri}.docker.com/builds/Windows/i386/docker-${version}-ce.zip"
+url64="https://${uri}.docker.com/builds/Windows/x86_64/docker-${version}-ce.zip"
 checksum=$(curl "${url}.sha256" | cut -f 1 -d " ")
 checksum64=$(curl "${url64}.sha256" | cut -f 1 -d " ")
 
