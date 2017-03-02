@@ -40,7 +40,7 @@ $zip.Dispose()
 
 "TEST: Version of binary should match"
 . docker --version
-if (-Not $(docker --version).Contains("version $version,")) {
+if (-Not $(docker --version).Contains("version $version-ce,")) {
   Write-Error "FAIL: Wrong version of docker installed!"
 }
 
