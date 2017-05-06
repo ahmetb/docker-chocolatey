@@ -1,8 +1,8 @@
 $packageName    = 'docker'
-$url            = 'https://get.docker.com/builds/Windows/i386/docker-17.04.0-ce.zip'
-$checksum       = 'c6307c09ed4337354c29d87bcfbff0333ac1bfc6551ae12c4101d3d1ef01cda3'
-$url64          = 'https://get.docker.com/builds/Windows/x86_64/docker-17.04.0-ce.zip'
-$checksum64     = 'e10ce76efff553b5f346015b8ea5bff1fa59977ad457f51643efc6811a70cf1b'
+$url            = 'https://get.docker.com/builds/Windows/i386/docker-17.05.0-ce.zip'
+$checksum       = '99820746a362466700718d33ee727b9aea993b9c2e05fb2c53ed606e9f6780f1'
+$url64          = 'https://get.docker.com/builds/Windows/x86_64/docker-17.05.0-ce.zip'
+$checksum64     = 'cbb0b47b511023a98dd0c83d76c1f30b315b8381b85b67be355eca4748229031'
 $checksumType   = 'sha256'
 $checksumType64 = 'sha256'
 $validExitCodes = @(0)
