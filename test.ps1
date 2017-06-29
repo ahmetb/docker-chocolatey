@@ -1,15 +1,3 @@
-param(
-  [string]$cpu
-)
-
-if (!$cpu) {
-  $cpu = "x64"
-}
-if ($cpu -eq "x86") {
-  $options = "-forcex86"
-}
-
-"Running tests for $cpu"
 $ErrorActionPreference = "Stop"
 
 if ($env:APPVEYOR_BUILD_VERSION) {
@@ -36,7 +24,7 @@ if ($zip.Entries.Count -ne 7) {
 $zip.Dispose()
 
 "TEST: Installation of package should work"
-. choco install -y docker $options -source .
+. choco install -y docker -source .
 
 "TEST: Version of binary should match"
 . docker --version

@@ -1,15 +1,15 @@
 # Maintainer's Guide
 
 This document explains how to maintain Chocolatey package
-for Docker client for Windows.
+for Docker CE client for Windows.
 
 ## How it works
 
-This Chocolatey package is designed to download the docker
-client binary (.exe) from `get.docker.com` and place it
+This Chocolatey package is designed to download the Docker CE
+client binary (.exe) from `download.docker.com/win/static/edge` and place it
 in `%PATH%`.
 
-The pre-release packages download the docker client binary from `test.docker.com`.
+The pre-release packages download the docker client binary from `download.docker.com/win/static/test`.
 
 Main installation script is written in PowerShell and is in
 `tools\chocolateyInstall.ps1`.
@@ -21,7 +21,7 @@ Main installation script is written in PowerShell and is in
 ## Making a new release
 
 The following steps describe the process to make a new release. If you want
-to make a new pre-release eg. for a release candidate 1.12.0-rc5, see the steps below.
+to make a new pre-release eg. for a release candidate 17.06.0-ce-rc5, see the steps below.
 
 #### 1. Update all files
 
@@ -30,7 +30,7 @@ First make sure you are in the `master` branch.
     git checkout master
     git pull
 
-Run `./update.sh 1.10.3` and specify the new version of the Docker client. (The script works on Mac only at the moment).
+Run `./update.sh 17.06.0-ce` and specify the new version of the Docker client. (The script works on Mac only at the moment).
 This will update these files
   * docker.nuspec
   * appveyor.yml
@@ -40,9 +40,9 @@ This will update these files
 
 Create a branch and push it.
 
-    git checkout -b update-docker-1.10.3
+    git checkout -b update-docker-17.06.0-ce
     git add docker.nuspec appveyor.yml tools/chocolateyInstall.ps1
-    git push -u origin update-docker-1.10.3
+    git push -u origin update-docker-17.06.0-ce
 
 #### 3. Create a pull request
 
@@ -55,7 +55,7 @@ At GitHub merge the pull request if all the tests from AppVeyor are green.
 #### 5. Draft a release
 
 Now draft a new release at https://github.com/ahmetalpbalkan/docker-chocolatey/releases/new
-Enter eg. 1.10.3 in the field "Tag version" and "Release title" and add some nice description.
+Enter eg. 17.06.0-ce in the field "Tag version" and "Release title" and add some nice description.
 
 AppVeyor then builds the package again, tests it and then pushes it to Chocolatey for approval.
 
