@@ -1,4 +1,4 @@
-version: 17.05.0.{build}
+version: 17.06.0.{build}
 environment:
   TOKEN:
     secure: TihxnYdIwtxnhS568XO7PECa6ETPBcTk2fUSgO8wq60c75Io9xPXE3TtLCBf5D6h
@@ -7,8 +7,7 @@ build_script:
   - ps: choco pack
 
 test_script:
-  - ps: .\test.ps1 -cpu x64
-  - ps: .\test.ps1 -cpu x86
+  - ps: .\test.ps1
 
 deploy_script:
   - ps: >-
