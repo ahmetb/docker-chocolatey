@@ -21,8 +21,8 @@ NOTE: Docker client for Windows is not a Docker container engine for Windows. Yo
     <mailingListUrl>https://github.com/docker/docker#talking-to-other-docker-users-and-contributors</mailingListUrl>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/ahmetalpbalkan/docker-chocolatey/d9d3bd5a750d03fc8933e1bee4c3755f361e2797/docker.png</iconUrl>
-    <packageSourceUrl>https://github.com/ahmetalpbalkan/docker-chocolatey</packageSourceUrl>
+    <iconUrl>https://raw.githubusercontent.com/ahmetb/docker-chocolatey/4be06de6bf48c35ddfc871bcf508a2d8308167d4/docker.png</iconUrl>
+    <packageSourceUrl>https://github.com/ahmetb/docker-chocolatey</packageSourceUrl>
     <releaseNotes>Updated to the latest Docker version.</releaseNotes>
   </metadata>
   <files>
