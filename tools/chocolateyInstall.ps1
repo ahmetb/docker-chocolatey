@@ -1,6 +1,6 @@
 $packageName    = 'docker'
-$url            = 'https://download.docker.com/win/static/edge/x86_64/docker-17.06.0-ce.zip'
-$checksum       = '3d27360a11a3a627aac9c6d73eb32d4a9b6dcca6bcb4b2c7a5fcd9d2e0ec6c82'
+$url            = 'https://download.docker.com/win/static/edge/x86_64/docker-17.07.0-ce.zip'
+$checksum       = 'a44b39af4e7d93057d8f91adb3062791202e1a03f06829af1eb2ddc768853688'
 $url64          = $url
 $checksum64     = $checksum
 $checksumType   = 'sha256'
