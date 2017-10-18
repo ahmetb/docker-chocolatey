@@ -1,4 +1,4 @@
-version: 17.09.0.{build}
+version: 17.10.0.{build}
 environment:
   TOKEN:
     secure: TihxnYdIwtxnhS568XO7PECa6ETPBcTk2fUSgO8wq60c75Io9xPXE3TtLCBf5D6h
