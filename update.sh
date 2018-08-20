@@ -21,8 +21,8 @@ then
   uri="test"
 fi
 
-url="https://download.docker.com/win/static/${uri}/x86_64/docker-${version}.zip"
-checksum=$(curl "${url}" | shasum -a 256 | cut -f 1 -d " ")
+url="https://github.com/StefanScherer/docker-cli-builder/releases/download/${version}/docker.exe"
+checksum=$(curl -L "${url}" | shasum -a 256 | cut -f 1 -d " ")
 
 # cut off "-ce", eg. 17.06.0-ce -> 17.06.0
 version=${version//-ce/}
