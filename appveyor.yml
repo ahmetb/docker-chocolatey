@@ -1,4 +1,4 @@
-version: 18.06.0.{build}
+version: 18.06.1.{build}
 environment:
   TOKEN:
     secure: TihxnYdIwtxnhS568XO7PECa6ETPBcTk2fUSgO8wq60c75Io9xPXE3TtLCBf5D6h

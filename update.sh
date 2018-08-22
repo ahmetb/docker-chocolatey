@@ -20,9 +20,10 @@ if [[ $version = *"-rc"* ]]
 then
   uri="test"
 fi
+set -e
 
 url="https://github.com/StefanScherer/docker-cli-builder/releases/download/${version}/docker.exe"
-checksum=$(curl -L "${url}" | shasum -a 256 | cut -f 1 -d " ")
+checksum=$(curl --fail -L "${url}" | shasum -a 256 | cut -f 1 -d " ")
 
 # cut off "-ce", eg. 17.06.0-ce -> 17.06.0
 version=${version//-ce/}
