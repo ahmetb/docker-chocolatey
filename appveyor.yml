@@ -14,7 +14,6 @@ deploy_script:
       Write-Host $env:APPVEYOR_REPO_TAG ;
       if($env:APPVEYOR_REPO_BRANCH -eq 'master' -And $env:APPVEYOR_REPO_TAG -eq 'true') {
         $version = $env:APPVEYOR_BUILD_VERSION -replace('\.[^.\\/]+$') ;
-        $version = $version -replace('-ce') ;
         choco apiKey -k $env:TOKEN -source https://push.chocolatey.org/ ;
         choco push docker.$version.nupkg
       }
