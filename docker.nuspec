@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>docker</id>
     <title>Docker CLI</title>
-    <version>18.06.1</version>
+    <version>18.09.0</version>
     <authors>Docker Contributors</authors>
     <owners>ahmetalpbalkan</owners>
     <summary>Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications.</summary>
@@ -13,11 +13,11 @@
 
 NOTE: Docker client for Windows is not a Docker container engine for Windows. You can use this to manage your Linux and Windows machines running as Docker hosts. You might want to have a look at the "docker-for-windows" package.</description>
     <projectUrl>https://www.docker.com</projectUrl>
-    <projectSourceUrl>https://github.com/docker/docker</projectSourceUrl>
+    <projectSourceUrl>https://github.com/docker/cli</projectSourceUrl>
     <tags>docker devops containers</tags>
     <copyright></copyright>
-    <docsUrl>https://docs.docker.com/engine/getstarted/</docsUrl>
-    <bugTrackerUrl>https://github.com/docker/docker/issues</bugTrackerUrl>
+    <docsUrl>https://docs.docker.com/engine/reference/commandline/cli/</docsUrl>
+    <bugTrackerUrl>https://github.com/docker/cli/issues</bugTrackerUrl>
     <mailingListUrl>https://github.com/docker/docker#talking-to-other-docker-users-and-contributors</mailingListUrl>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
