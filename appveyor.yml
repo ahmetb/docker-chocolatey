@@ -1,4 +1,4 @@
-version: 18.06.1.{build}
+version: 18.09.0.{build}
 environment:
   TOKEN:
     secure: TihxnYdIwtxnhS568XO7PECa6ETPBcTk2fUSgO8wq60c75Io9xPXE3TtLCBf5D6h
@@ -14,7 +14,6 @@ deploy_script:
       Write-Host $env:APPVEYOR_REPO_TAG ;
       if($env:APPVEYOR_REPO_BRANCH -eq 'master' -And $env:APPVEYOR_REPO_TAG -eq 'true') {
         $version = $env:APPVEYOR_BUILD_VERSION -replace('\.[^.\\/]+$') ;
-        $version = $version -replace('-ce') ;
         choco apiKey -k $env:TOKEN -source https://push.chocolatey.org/ ;
         choco push docker.$version.nupkg
       }
