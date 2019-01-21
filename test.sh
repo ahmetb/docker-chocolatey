@@ -2,7 +2,7 @@
 # Build and test the docker NuGet package in a Windows container
 
 docker build -t chocolatey - <<EOF
-FROM microsoft/windowsservercore
+FROM mcr.microsoft.com/windows/servercore:1809
 
 ENV chocolateyUseWindowsCompression false
 
