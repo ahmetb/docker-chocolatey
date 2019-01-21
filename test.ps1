@@ -50,13 +50,7 @@ if (Test-Path $env:ChocolateyInstall\bin\docker-proxy.exe) {
   Write-Error "FAIL: Docker proxy shim exists!"
 }
 
-"TEST: Uninstall show remove the binary"
+"TEST: Uninstall should work"
 . choco uninstall docker
-try {
-  . docker
-  Write-Host "PASS: docker still found"
-} catch {
-  Write-Error "FAIL: docker binary not found"
-}
 
 "TEST: Finished"
